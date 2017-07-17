@@ -1,0 +1,13 @@
+﻿name, category, description, price
+toothbrush, hygiene, teeth, 2.00
+apple, produce, healthy, 0.50
+bananas, produce, healthy, 0.33
+soap, hygiene, cleans body, 1.00
+deodorant, hygiene, odor, 5.00
+dress, clothing, ladies, 20.00
+pants, clothing, mens, 30.00
+hat, clothing, unisex, 10.00
+celery, produce, healthy, 1.00
+ibuprofen, pharmacy, medication, 7.00
+Nyquil, pharmacy, medication, 9.00
+Band-Aids, pharmacy, healing, 4.00
