@@ -14,6 +14,7 @@ namespace PointOfSale
         private string description;
         private double price;
         
+//GitHub is confusing
 
         public static List<Product> products = new List<Product>();
 
