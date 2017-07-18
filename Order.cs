@@ -38,7 +38,8 @@ namespace PointOfSale
         public void printCustOrder(List<Order> order, List<Product> products)
         {
             double itemSubtotal = 0;
-            Console.WriteLine("\nNAME\t\tQTY\t$/EA.\tSUBTOTAL\n");
+            //Console.WriteLine("\nNAME\t\tQTY\t$/EA.\tSUBTOTAL\n");
+            Console.WriteLine("{0,-10}{1,10}{2,10}{3,16}", "NAME","QTY","$/EA","SUBTOTAL\n");
             for (int i = 0; i < order.Count(); i++)
             {
                 int currentIndex = order[i].getIndex();
@@ -46,12 +47,16 @@ namespace PointOfSale
                 int currentQty = order[i].getQty();
                 double currentPrice = products[currentIndex].getPrice();
                 itemSubtotal = currentPrice * currentQty;
-                Console.WriteLine($"{currentName}\t\t{currentQty}\t{currentPrice.ToString("0.00")}\t{itemSubtotal.ToString("0.00")}");
+                //Console.WriteLine($"{currentName}\t\t{currentQty}\t{currentPrice.ToString("0.00")}\t{itemSubtotal.ToString("0.00")}");
+                Console.WriteLine("{0,-10}{1,10}{2,10:N1}{3,15:N1}",currentName,currentQty,currentPrice.ToString("0.00"),itemSubtotal.ToString("0.00"));
             }
             orderSubtotal = orderSubtotal + itemSubtotal;
-            Console.WriteLine("\n\t\tPreTax Total:\t" + orderSubtotal.ToString("0.00"));
-            Console.WriteLine("\t\tSales Tax (6%): " + (orderSubtotal * .06).ToString("0.00"));
-            Console.WriteLine("\t\tGrand Total: \t" + (orderSubtotal * 1.06).ToString("0.00"));
+            Console.WriteLine("\n{0,35}{1,10}", "PreTax Total:", orderSubtotal.ToString("0.00"));
+            Console.WriteLine("{0,35}{1,10}", "Sales Tax (6%):", (orderSubtotal * .06).ToString("0.00"));
+            Console.WriteLine("{0,35}{1,10}", "Grand Total:", (orderSubtotal * 1.06).ToString("0.00"));
+            //Console.WriteLine("\n\t\tPreTax Total:\t" + orderSubtotal.ToString("0.00"));
+            //Console.WriteLine("\t\tSales Tax (6%): " + (orderSubtotal * .06).ToString("0.00"));
+            //Console.WriteLine("\t\tGrand Total: \t" + (orderSubtotal * 1.06).ToString("0.00"));
         }
 
         public void outputReceipt(double orderSubtotal)
@@ -61,7 +66,7 @@ namespace PointOfSale
 
         public void printReceipt(List<Order> order, List<Product> products, double orderSubtotal)
         {
-            Console.WriteLine("\nNAME\t\tQTY\t$/EA.\tSUBTOTAL\n");
+            Console.WriteLine("{0,-10}{1,10}{2,10}{3,16}", "NAME", "QTY", "$/EA", "SUBTOTAL\n");
             for (int i = 0; i < order.Count(); i++)
             {
                 double itemSubtotal = 0;
@@ -70,11 +75,11 @@ namespace PointOfSale
                 int currentQty = order[i].getQty();
                 double currentPrice = products[currentIndex].getPrice();
                 itemSubtotal = currentPrice * currentQty;
-                Console.WriteLine($"{currentName}\t\t{currentQty}\t{currentPrice.ToString("0.00")}\t{itemSubtotal.ToString("0.00")}");
+                Console.WriteLine("{0,-10}{1,10}{2,10:N1}{3,15:N1}", currentName, currentQty, currentPrice.ToString("0.00"), itemSubtotal.ToString("0.00"));
             }
-            Console.WriteLine("\n\t\tPreTax Total:\t" + orderSubtotal.ToString("0.00"));
-            Console.WriteLine("\t\tSales Tax (6%): " + (orderSubtotal * .06).ToString("0.00"));
-            Console.WriteLine("\t\tGrand Total: \t" + (orderSubtotal * 1.06).ToString("0.00"));
+            Console.WriteLine("\n{0,35}{1,10}", "PreTax Total:", orderSubtotal.ToString("0.00"));
+            Console.WriteLine("{0,35}{1,10}", "Sales Tax (6%):", (orderSubtotal * .06).ToString("0.00"));
+            Console.WriteLine("{0,35}{1,10}", "Grand Total:", (orderSubtotal * 1.06).ToString("0.00"));
         }
 
         //public void printSubtotal(List<Order> order, List<Product> products)
