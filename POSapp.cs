@@ -38,7 +38,7 @@ namespace PointOfSale
             {
                 sale = true;
                 Console.Clear();
-                O = null;
+                //O = null;
                 P.printProductList();
             }
             else if ((answer == "N") || (answer == "n"))
