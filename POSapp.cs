@@ -18,7 +18,7 @@ namespace PointOfSale
 
             while (sale == true)
             {
-                Console.WriteLine("Welome to the Shopping Center, below is our products please select a item");
+                Console.WriteLine("Welcome to the Shopping Center. Below are our products. Please select a item.\n");
                 P.outputProductList();
 
                 while (again == true)
@@ -28,37 +28,38 @@ namespace PointOfSale
             }
         }
 
-        public Boolean newSale()
+        public bool newSale()
         {
-            Boolean sale;
-            Console.WriteLine("Would you like to start a new sale? Y/N");
-            String answer = Console.ReadLine();
+            bool sale;
+            Console.Write("\nWould you like to start a new sale? (Y/N): ");
+            string answer = Console.ReadLine();
 
             if ((answer == "Y") || (answer == "y"))
             {
                 sale = true;
+                Console.Clear();
+                O = null;
                 P.printProductList();
             }
             else if ((answer == "N") || (answer == "n"))
             {
-                
                 Console.WriteLine("Ok, thank you see you next shift!");
                 sale = false;
             }
             else
             {
-                Console.WriteLine("I'm sorry I don't understand. Let's try again");
+                Console.WriteLine("I'm sorry I don't understand. Let's try again.");
                 sale = newSale();
             }
             return sale;
         }
 
-        public Boolean anotherProduct()
+        public bool anotherProduct()
         {
-            Boolean again;
+            bool again;
 
-            Console.WriteLine("Would you like to continue shopping? Y/N");
-            String answer = Console.ReadLine();
+            Console.Write("\nWould you like to continue shopping? (Y/N): ");
+            string answer = Console.ReadLine();
 
             if ((answer == "Y") || (answer == "y"))
             {
@@ -69,11 +70,12 @@ namespace PointOfSale
             else if ((answer == "N") || (answer == "n"))
             {
                 again = false;
+                Console.Clear();
                 Payment();
             }
             else
             {
-                Console.WriteLine("I'm sorry I don't understand. Let's try again");
+                Console.WriteLine("I'm sorry I don't understand. Let's try again.");
                 again = anotherProduct();
             }
             return again;
@@ -82,16 +84,16 @@ namespace PointOfSale
         public void addProduct()
         {
             O.addToCustOrder();
+            Console.Clear();
+            Console.WriteLine("Your order so far . . .\n");
             O.outputCustOrder();
             anotherProduct();
         }
 
         public void Payment()
         {
-            
             O.getPayment();
             newSale();
-            
         }
     }
 }

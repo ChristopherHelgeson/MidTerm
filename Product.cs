@@ -14,8 +14,6 @@ namespace PointOfSale
         private string description;
         private double price;
         
-//GitHub is confusing and I don't like it
-
         public static List<Product> products = new List<Product>();
 
         public Product(string name, string category, string description, double price)
@@ -34,13 +32,13 @@ namespace PointOfSale
 
         public List<Product> buildProduct()
         {
-            Product a = new Product("Batman", "Produce", "Fruit", 100.00);
+            Product a = new Product("Apple", "Produce", "Fruit", 1.00);
             products.Add(a);
             Product b = new Product("Banana", "Produce", "Fruit", 0.50);
             products.Add(b);
             Product c = new Product("Cherry", "Produce", "Fruit", 1.50);
             products.Add(c);
-            Product d = new Product("Celery", "Produce", "Fruit", 1.75);
+            Product d = new Product("Celery", "Produce", "Veget", 1.75);
             products.Add(d);
             Product e = new Product("Oranges", "Produce", "Fruit", 3.50);
             products.Add(e);
@@ -50,9 +48,9 @@ namespace PointOfSale
             products.Add(g);
             Product h = new Product("NyQuil", "Pharma", "Medic", 9.50);
             products.Add(h);
-            Product j = new Product("Beer", "Drink", "Alcohol", 9.75);
+            Product j = new Product("Beer", "Bev.", "Alcohol", 9.75);
             products.Add(j);
-            Product k = new Product("Water", "Drink", "Bever", 1.00);
+            Product k = new Product("Water", "Bev.", "Non-Alc", 1.00);
             products.Add(k);
             Product l = new Product("Pizza", "Food", "Frozen", 8.50);
             products.Add(l);
