@@ -10,49 +10,26 @@ namespace PointOfSale
     {
         Product P = new Product(" ", " ", " ", 0.00);
         Order O = new Order(0, 0);
+        
 
         public POSapp()
         {
-            bool sale = true;
+            //bool sale = true;
             bool again = true;
 
-            while (sale == true)
-            {
+           
                 Console.WriteLine("Welcome to the Shopping Center. Below are our products. Please select a item.\n");
-                P.outputProductList();
+                P.printProductList();
 
                 while (again == true)
                 {
                     addProduct();
+                    again = anotherProduct();
                 }
-            }
+            
         }
 
-        public bool newSale()
-        {
-            bool sale;
-            Console.Write("\nWould you like to start a new sale? (Y/N): ");
-            string answer = Console.ReadLine();
-
-            if ((answer == "Y") || (answer == "y"))
-            {
-                sale = true;
-                Console.Clear();
-                O = null;
-                P.printProductList();
-            }
-            else if ((answer == "N") || (answer == "n"))
-            {
-                Console.WriteLine("Ok, thank you see you next shift!");
-                sale = false;
-            }
-            else
-            {
-                Console.WriteLine("I'm sorry I don't understand. Let's try again.");
-                sale = newSale();
-            }
-            return sale;
-        }
+        
 
         public bool anotherProduct()
         {
@@ -87,13 +64,13 @@ namespace PointOfSale
             Console.Clear();
             Console.WriteLine("Your order so far . . .\n");
             O.outputCustOrder();
-            anotherProduct();
+            
         }
 
         public void Payment()
         {
             O.getPayment();
-            newSale();
+            
         }
     }
 }
