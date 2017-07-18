@@ -53,7 +53,7 @@ namespace PointOfSale
             orderSubtotal = orderSubtotal + itemSubtotal;
             Console.WriteLine("\n{0,35}{1,10}", "PreTax Total:", orderSubtotal.ToString("0.00"));
             Console.WriteLine("{0,35}{1,10}", "Sales Tax (6%):", (orderSubtotal * .06).ToString("0.00"));
-            Console.WriteLine("{0,35}{1,10}", "Grand Total:", (orderSubtotal * 1.06).ToString("0.00"));
+            Console.WriteLine("{0,35}{1,10}", "Grand Total:", "$" + (orderSubtotal * 1.06).ToString("0.00"));
             //Console.WriteLine("\n\t\tPreTax Total:\t" + orderSubtotal.ToString("0.00"));
             //Console.WriteLine("\t\tSales Tax (6%): " + (orderSubtotal * .06).ToString("0.00"));
             //Console.WriteLine("\t\tGrand Total: \t" + (orderSubtotal * 1.06).ToString("0.00"));
@@ -79,7 +79,7 @@ namespace PointOfSale
             }
             Console.WriteLine("\n{0,35}{1,10}", "PreTax Total:", orderSubtotal.ToString("0.00"));
             Console.WriteLine("{0,35}{1,10}", "Sales Tax (6%):", (orderSubtotal * .06).ToString("0.00"));
-            Console.WriteLine("{0,35}{1,10}", "Grand Total:", (orderSubtotal * 1.06).ToString("0.00"));
+            Console.WriteLine("{0,35}{1,10}", "Grand Total:", "$" + (orderSubtotal * 1.06).ToString("0.00"));
         }
 
         //public void printSubtotal(List<Order> order, List<Product> products)
@@ -198,8 +198,8 @@ namespace PointOfSale
                 double exactChange = customerWallet - grandTotal;
                 string change = exactChange.ToString("0.00");
                 outputReceipt(orderSubtotal);
-                Console.WriteLine("\t\tTendered: \t" + customerWallet);
-                Console.WriteLine("\t\tChange: \t" + change);
+                Console.WriteLine("{0,35}{1,10}", "Tendered:", customerWallet.ToString("0.00"));
+                Console.WriteLine("{0,35}{1,10}", "Change:", "$" + change);
             }
         }
     }

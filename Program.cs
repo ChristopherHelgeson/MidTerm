@@ -37,7 +37,8 @@ namespace PointOfSale
             }
             else if ((answer == "N") || (answer == "n"))
             {
-                Console.WriteLine("Ok, thank you see you next shift!");
+                Console.Clear();
+                Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\tOk, thank you see you next shift!\n\n\n\n\n\n\n\n\n\n\n\n\n");
                 sale = false;
             }
             else

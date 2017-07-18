@@ -38,23 +38,23 @@ namespace PointOfSale
             products.Add(b);
             Product c = new Product("Cherry", "Produce", "Fruit", 1.50);
             products.Add(c);
-            Product d = new Product("Celery", "Produce", "Veget", 1.75);
+            Product d = new Product("Celery", "Produce", "Vegetable", 1.75);
             products.Add(d);
             Product e = new Product("Oranges", "Produce", "Fruit", 3.50);
             products.Add(e);
-            Product f = new Product("Corn", "Produce", "Veget", .99);
+            Product f = new Product("Corn", "Produce", "Vegetable", .99);
             products.Add(f);
-            Product g = new Product("Advil", "Pharma", "Medic", 7.00);
+            Product g = new Product("Advil", "Pharmacy", "Medicine", 7.00);
             products.Add(g);
-            Product h = new Product("NyQuil", "Pharma", "Medic", 9.50);
+            Product h = new Product("NyQuil", "Pharmacy", "Medicine", 9.50);
             products.Add(h);
-            Product j = new Product("Beer", "Bev.", "Alcohol", 9.75);
+            Product j = new Product("Beer", "Beverage", "Alcohol", 9.75);
             products.Add(j);
-            Product k = new Product("Water", "Bev.", "Non-Alc", 1.00);
+            Product k = new Product("Water", "Beverage", "Non-Alcohol", 1.00);
             products.Add(k);
             Product l = new Product("Pizza", "Food", "Frozen", 8.50);
             products.Add(l);
-            Product m = new Product("GR Beef", "Food", "Meat", 7.50);
+            Product m = new Product("Gr. Beef", "Food", "Meat", 7.50);
             products.Add(m);
 
             return products;
@@ -67,7 +67,8 @@ namespace PointOfSale
 
         public void printProduct(List<Product> products)
         {
-            Console.WriteLine("#\tNAME\t\tCATEGORY\tDESC.\t\tPRICE\n");
+            //Console.WriteLine("#\tNAME\t\tCATEGORY\tDESC.\t\tPRICE\n");
+            Console.WriteLine("{0,3}{1,-3}{2,-15}{3,-15}{4,-12}{5,11}","#","","NAME","CATEGORY","DESCRIPTION","PRICE\n");
 
             for (int i = 0; i < products.Count(); i++)
             {
@@ -75,7 +76,8 @@ namespace PointOfSale
                 string currentCategory = products[i].getCategory();
                 string currentDescription = products[i].getDescription();
                 double currentPrice = products[i].getPrice();
-                Console.WriteLine(i + ")\t" + currentItem + "\t\t" + currentCategory + "\t\t" + currentDescription + "\t\t$ " + currentPrice.ToString("0.00"));
+                //Console.WriteLine(i + ")\t" + currentItem + "\t\t" + currentCategory + "\t\t" + currentDescription + "\t\t$ " + currentPrice.ToString("0.00"));
+                Console.WriteLine("{0,3}{1,-3}{2,-15}{3,-15}{4,-12}{5,10}", i,")", currentItem, currentCategory, currentDescription, "$"+ currentPrice.ToString("0.00"));
             }
             Console.WriteLine();
         }
